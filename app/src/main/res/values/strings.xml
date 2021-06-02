@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">JobTimer</string>
+    
+    <string-array name="tasks">
+        <item>Wireframe</item>
+        <item>UI</item>
+        <item>Activities</item>
+        <item>Create README</item>
+    </string-array>
+</resources>
