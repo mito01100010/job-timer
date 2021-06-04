@@ -51,7 +51,8 @@
             android:background="@color/colorTextHint"
             android:onClick="resetButton"
             android:text="Finish Work"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:enabled="false"/>
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

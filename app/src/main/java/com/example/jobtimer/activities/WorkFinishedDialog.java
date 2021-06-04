@@ -25,17 +25,11 @@ public class WorkFinishedDialog extends AppCompatDialogFragment {
 
         builder.setView(view)
                 .setTitle("NOTE")
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                .setNegativeButton("Cancel", (dialog, which) -> {
 
-                    }
                 })
-                .setPositiveButton("Save", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //add note in the db
-                    }
+                .setPositiveButton("Save", (dialog, which) -> {
+                    //add note in the db
                 });
         return builder.create();
     }

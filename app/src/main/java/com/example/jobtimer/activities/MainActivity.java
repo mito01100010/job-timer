@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView timerText;
     Button stopStartButton;
+    Button resetButton;
     Timer timer;
     TimerTask timerTask;
     Double time = 0.0;
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Spinner taskSpinner = (Spinner) findViewById(R.id.tasksSpinner);
         timerText = (TextView) findViewById(R.id.timerText);
         stopStartButton = (Button) findViewById(R.id.startStopButton);
+        resetButton = (Button) findViewById(R.id.resetButton);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.tasks));
@@ -41,7 +45,26 @@ public class MainActivity extends AppCompatActivity {
         taskSpinner.setAdapter(adapter);
         timer = new Timer();
 
+        timerText.addTextChangedListener(timeResetTextWatcher);
+
     }
+
+    private TextWatcher timeResetTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            resetButton.setEnabled(time != 0.0);
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 
     public void resetButton(View view) {
         AlertDialog.Builder resetAlert = new AlertDialog.Builder(this);
