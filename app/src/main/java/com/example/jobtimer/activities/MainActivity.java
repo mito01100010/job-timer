@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 if(timerTask != null){
                     timerTask.cancel();
-                    setButtonUI(stopStartButton, "Start");
+                    setButtonUI(stopStartButton, "Start Work");
                     time = 0.0;
                     timerStarted = false;
                     timerText.setText(formatTime(0,0,0));
