@@ -10,7 +10,7 @@
     <color name="gray">#808080</color>
     <color name="colorPrimary">#F2BC94</color>
     <color name="colorPrimaryDark">#2673B8</color>
-    <color name="colorAccent">#F5C6D0</color>
+    <color name="colorAccent">#FF03DAC5</color>
     <color name="colorText">#FEFEFE</color>
     <color name="colorTextHint">#6DD47E</color>
 </resources>

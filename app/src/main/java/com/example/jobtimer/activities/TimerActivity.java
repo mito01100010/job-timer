@@ -1,24 +1,29 @@
 package com.example.jobtimer.activities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.jobtimer.R;
+import com.example.jobtimer.activities.WorkFinishedDialog;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity {
+public class TimerActivity extends AppCompatActivity {
 
     TextView timerText;
     Button stopStartButton;
@@ -32,14 +37,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_timer);
+        //getSupportActionBar().setTitle("Timer");
 
         Spinner taskSpinner = (Spinner) findViewById(R.id.tasksSpinner);
         timerText = (TextView) findViewById(R.id.timerText);
         stopStartButton = (Button) findViewById(R.id.startStopButton);
         resetButton = (Button) findViewById(R.id.resetButton);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(TimerActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.tasks));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         taskSpinner.setAdapter(adapter);

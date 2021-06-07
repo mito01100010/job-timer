@@ -7,11 +7,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
-import androidx.core.widget.NestedScrollView;
 
 import com.example.jobtimer.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -67,7 +65,7 @@ public class LoginActivity extends AppCompatActivity{
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged in successfully. ", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         }else{
                             Toast.makeText(LoginActivity.this, "Incorrect credentials. " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
