@@ -1,17 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryDark"
     tools:context=".activities.ManageUsersActivity"
-    android:background="@android:color/holo_red_light">
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:id="@+id/textViewManageUsers"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
         android:text="Manage Users"
-        android:textSize="30sp" />
+        android:textSize="40sp"
+        android:textColor="@color/colorText"/>
 
 
-</RelativeLayout>
+        <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAddUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:textColor="@color/colorText"
+        android:background="@color/colorTextHint"
+        android:text="Add User"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatDeleteUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorText"
+            android:background="@color/colorTextHint"
+            android:text="Delete User"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatEditUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorText"
+            android:background="@color/colorTextHint"
+            android:text="Edit User"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>

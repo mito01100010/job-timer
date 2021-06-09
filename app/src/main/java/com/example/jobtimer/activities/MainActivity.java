@@ -13,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.jobtimer.R;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -54,7 +55,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(MainActivity.this, ManageTasksActivity.class));
         }else if(id == R.id.nav_reference){
             startActivity(new Intent(MainActivity.this, ReferenceActivity.class));
-            }
+        }else if(id == R.id.nav_logout){
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+        }
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
